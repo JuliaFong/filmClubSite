@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Film Club Website</title>
+
+<!--
+We will insert here the references to static resources: scripts and CSS
+-->
+
+<!--Below the Firebase scripts-->
+  <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+  <script>
+
+// we will insert here the Firebase project configuration
+// we will then initialize the Firebase app and Analytics
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script> 
+
+
+
+  <div class="header">
+    <h1>Film Club Website</h1>
+    <p>This is a responsive web app, view it on mobile or resize the window to see the effect.</p>
+  </div>
+
+  <div class="topnav">
+    <a href="/">Movies</a>
+    <a href="pastmovies">Past movies</a>
+    <a href="suggestamovie">Suggest a movie</a>
+  <a style="float:right" href="/login">Login</a>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+      <div class="userinfo" id="login-info" hidden=true>
+        
+<!-- We will display here the username, if a valid user is logged in, using Flask and jinja2 template population -->
+
+        </dl>
+      <div id="firebaseui-auth-container"></div>
+      <br><button class="button" id="sign-out" hidden=true>Sign Out</button>
+      </div>
+
+<!-- Notice below we create a set of cards dynamically showing the movie entities from our datastore, notice the usage of a for cycle with Jinja2 templating -->
+
+      {% for movie in movies %}
+      <div class="card" id="{{ movie['key']['kind'] }}-{{ movie['key']['name'] }}">
+        <h2>Title: {{ movie['title'] }}</h2>
+        <h5>Genre:{{ movie['genre'] }}</h5>
+        <h5>Suggested by: {{ movie['suggested_by'] }}</h5>
+        <p>Plot: {{ movie['plot'] }}</p>
+        <form action = "/" method = "POST">
+        <p><input type="hidden" name="kind" value="{{ movie['key']['kind'] }}"></p>
+        <p><input type="hidden" name="name" value="{{ movie['key']['name'] }}"></p>
+        <p><input type="submit" value="Mark as seen"></p>
+        </form>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  <div class="footer">
+  <h5>A basic film club draft web app.</h5>
+  </div>
+
+</body>
+</html>

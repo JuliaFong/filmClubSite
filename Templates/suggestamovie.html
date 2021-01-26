@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Film Club Website</title>
+
+<!--
+We will insert here the references to static resources: scripts and CSS
+-->
+
+<!--Below the Firebase scripts-->
+  <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+  <script>
+
+// we will insert here the Firebase project configuration
+// we will then initialize the Firebase app and Analytics
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script> 
+
+
+
+  <div class="header">
+    <h1>Film Club Website</h1>
+    <p>This is a responsive web app, view it on mobile or resize the window to see the effect.</p>
+  </div>
+
+  <div class="topnav">
+    <a href="/">Movies</a>
+    <a href="pastmovies">Past movies</a>
+    <a href="suggestamovie">Suggest a movie</a>
+  <a style="float:right" href="/login">Login</a>
+  </div>
+
+  <div class="row">
+    <div class="column">
+
+ <!-- We will call the Firebase auth script here, after firebase has been initialized, and before we need to utilize the UI component for log ins-->
+
+      <div class="userinfo" id="login-info" hidden=true>
+        Logged in as:
+
+<!-- We will display here the username, if a valid user is logged in, using Flask and jinja2 template population -->
+
+        </dl>
+      <div id="firebaseui-auth-container"></div>
+      <br><button class="button" id="sign-out" hidden=true>Sign Out</button>
+      </div>
+
+      <div class="card">
+      <form action = "/suggestamovie" method = "POST">
+        <p>Title:  <input type="text" name="title"></p>
+        <p>Genre:  <input type="text" name="genre"></p>
+        <p>Plot: <textarea name="plot" style="width: 80% height: 100%;"></textarea></p>
+
+    <!-- Below notice we have inserted through web form a "suggested by" hidden field to store in our datastore which user has suggested the movie-->
+      <input type="hidden" name="suggested_by" value="{{ user_data['email']"></p>
+ 
+        <p><input type="submit" value="Submit"></p>
+      </form>
+      </div>
+    </div>
+
+  <div class="footer">
+  <h5>A basic film club draft web app.</h5>
+  </div>
+
+
+</body>
+</html>
