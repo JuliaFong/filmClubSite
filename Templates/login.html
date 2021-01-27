@@ -17,13 +17,18 @@ We will insert here the references to static resources: scripts and CSS
 
   <script>
 
-// we will insert here the Firebase project configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCs269PrWhItHo0CRD2NJkipfdyVB_uACY",
+    authDomain: "filmclubsite.firebaseapp.com",
+    projectId: "filmclubsite",
+    storageBucket: "filmclubsite.appspot.com",
+    messagingSenderId: "1027376423445",
+    appId: "1:1027376423445:web:effc200542f2b58d66a41c",
+    measurementId: "G-JSXPDR6S18"
+  };
 
-
-// initialize the Firebase app and Analytics
-
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
   </script> 
 
  <!-- We will call the Firebase auth script here, after firebase has been initialized, and before we need to utilize the UI component for log ins-->
