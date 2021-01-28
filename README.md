@@ -37,3 +37,12 @@
 * Learn how to use TensorFlow
 * Get a better understanding of how to use Jupyter for AppEngines
 
+# Languages and Technologies used
+* HTML5
+* CSS3
+* Javascript
+* Python
+* Flask
+* Cloud SDK
+* Firebase
+* Yaml
