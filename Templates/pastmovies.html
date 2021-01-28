@@ -3,9 +3,8 @@
 <head>
   <title>Film Club Website</title>
 
-<!--
-We will insert here the references to static resources: scripts and CSS
--->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
 
 <!--Below the Firebase scripts-->
   <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
@@ -50,9 +49,12 @@ We will insert here the references to static resources: scripts and CSS
     <div class="column">
       <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
         <div class="userinfo" id="login-info" hidden=true>
-
-<!-- We will display here the username, if a valid user is logged in, using Flask and jinja2 template population -->
-
+          Logged in as:
+          {% if user_data %}
+          {{ user_data['name'] }}
+          {% elif error_message %}
+          <p>Error: {{ error_message }}</p>
+          {% endif %}
         </dl>
       <div id="firebaseui-auth-container"></div>
       <br><button class="button" id="sign-out" hidden=true>Sign Out</button>

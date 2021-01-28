@@ -2,12 +2,8 @@
 <html>
 <head>
   <title>Film Club Website</title>
-
-<!--
-We will insert here the references to static resources: scripts and CSS
--->
-
-<!--Below the Firebase scripts-->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='login.js') }}"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
 </head>
