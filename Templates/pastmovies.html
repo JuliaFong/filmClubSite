@@ -51,7 +51,7 @@
         <div class="userinfo" id="login-info" hidden=true>
           Logged in as:
           {% if user_data %}
-          {{ user_data['name'] }}
+          {{ user_data['email'] }}
           {% elif error_message %}
           <p>Error: {{ error_message }}</p>
           {% endif %}

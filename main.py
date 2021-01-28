@@ -5,7 +5,7 @@ import google.oauth2.id_token
 
 firebase_request_adapter = requests.Request()
 app = Flask(__name__)
-# datastore_client = datastore.Client()
+datastore_client = datastore.Client()
 
 @app.route('/', methods = ['POST', 'GET'])
 def root():
@@ -25,8 +25,8 @@ def root():
         return redirect(url_for("login"))
         
     return render_template(
-    'index.html',
-    user_data=claims, error_message=error_message, id_token=id_token)
+        'index.html',
+        user_data=claims, error_message=error_message, id_token=id_token)
         
         
 @app.route('/login', methods= ['POST', 'GET'])
@@ -46,7 +46,7 @@ def login():
             
     return render_template(
     'login.html',
-    user_data=claims, error_message=error_message, id_token=id_token)
+        user_data=claims, error_message=error_message, id_token=id_token)
     
 @app.route('/pastmovies', methods = ['POST', 'GET']) 
 def pastmovies():
@@ -67,7 +67,7 @@ def pastmovies():
         
         return render_template(
         'pastmovies.html',
-        user_data=claims, error_message=error_message, id_token=id_token)  
+            user_data=claims, error_message=error_message, id_token=id_token)  
 
 @app.route('/suggestamovie', methods = ['POST', 'GET'])
 def suggestamovie():
@@ -88,7 +88,7 @@ def suggestamovie():
     
     return render_template(
         'suggestamovie.html',
-        user_data=claims, error_message=error_message, id_token=id_token)
+            user_data=claims, error_message=error_message, id_token=id_token)
     
 
  

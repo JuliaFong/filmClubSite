@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "filmclubsite",
+  "private_key_id": "71d7df8d91e18cb20ad10e7e55fb5678c84ccecb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFBXd5Ztu/aTFP\nJ++02OBSwxJGmBJsSBnMBz+7uOpLOFjh5oWaPVX3GvIDHvszlvlObCjW21qDddGK\nZJtA7NCyVVarkSpTWBrQ0iOk88tbqmePfy89v5M8Kq2/x2vpybWJN9Dw1+l17MYK\n7V0DXlLO2v/NuMEkDKRqsixLu/mhKxP2CsokPKnfObdgU0psXZU8ljAL3VknUgx1\nGvur2ADElneHq8c2rSN6QAWb8rcp8act3ArHXWkJAvugNk7QdGs2f3Sl4fSWx6BZ\nMXJjQ8K4ofxFNBrL4x3HKBJJjZTbBsmLt8Z93+znlyScNroK+A0tE0QOPA5EUeXV\n9pQXC3f3AgMBAAECggEABvkYDuhoi6A9+ga4UabBXbyAt5XnRQTSQOnaxBqZ1Dq0\nzp35iYl1Mu81tI2Sp3NG9JMYaO5PiEqRtXu1EPmwszcY/65+GIAMRurBDzP/tQlV\na/s84UsX+2+pQZndxGL6tVYP445IuX89TSK0gYuDk8WlexL4Zv25jfsrXSzUe3M6\ndhg9u62OSds75DAB7qQ4NkVA9/n1oV1b+yZD9sO+oOUWVDH1SjlwjZ09PAFvpEr1\n/lpW1mdEDSZqdMHIw/hZOobet54xqueboNSDiprqIIFLfBRxf+5PHz7SVzhVuevH\nUVT6PDJG+YQYV4kqKPF5PSPYCBZz5xnmOGSxJUHlwQKBgQDjii8CoJEEfHgQsggg\nw9PzRiS6sgDFE9DZcf6gAPGWUEgLNk0yjvp/4XpOT5t98/+h9eoeGD3ise+4g0q2\nrF04hPICClaM+QcruJkkXLHZ3yYhMNYMy8jsy36ECI2zmX1JzQR/sLctrEdI/+BY\nQm7f2paL/IgyM2s5NEFNSk94twKBgQDdqhWFaZdzyOZugwpO1gxFJM1COZY05xUc\nOFYfn6y0cOqR7CE3pjzYWNYtedlU8XNJHaP7uP1e5IQoVFqfZbEyC4wYqJPtQv+V\nMWIEgc0m4rVNxDFKm007IYZkzk6iQzEtghNKNCG4PwBoe1YjvohiZaCDwxERJbo3\nKsutVng6wQKBgGuMyDWksYb+Uj4J+H+MMGWftQKt2mFMwX3WPPViHM7guXzbONf5\n7vt9FzNmu2doal8ifnulF7NMSbPcEvePNyzc4gsG2eweVT5cLb6bNdF2gW5UyAga\nVqlecjl0VY4bsbWtez/jxmGHOdaOY3s0Q3X5uwkF31ZjKX5LbcZbpn63AoGBANBt\n9f6U40yEQ+j2XuLycmcxy6/R5mOoRjla3+CsjAC/jFHZ7wIc1mm4Xuwz/x/YScce\nj+tKbzSjO4GQkAYB4TRllz44haA7t4fZ/4itZPKDimeta4vzrBNF2tE/DMGW3M8l\n2G2Vx38v/npAPyctKaEcXmqHKa0uBIOLQimjfToBAoGAfaydq+NiFP69cY9JiWJN\n8y2K66fLlKmosumDN1LAr7MYx0SUHOCEIjdZ679PUzZyC/9eol7Qos2DKHL6rk3c\nmlNfv/B57oWmEXCgpA5g62RI+SH+Vi3hI0EFi/7+KDfh68Pca/CmGbtIBrfbPiCd\ngYcpypXMO7LlvRWO80ypU04=\n-----END PRIVATE KEY-----\n",
+  "client_email": "filmdatastore@filmclubsite.iam.gserviceaccount.com",
+  "client_id": "104701842154274949531",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/filmdatastore%40filmclubsite.iam.gserviceaccount.com"
+}
