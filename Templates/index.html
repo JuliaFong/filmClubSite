@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Film Club Website</title>
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename'style.css') }}">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script src="{{ url_for('static', filename='index.js') }}"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
@@ -55,7 +55,7 @@
       <br><button class="button" id="sign-out" hidden=true>Sign Out</button>
       </div>
 
-<!-- Notice below we create a set of cards dynamically showing the movie entities from our datastore, notice the usage of a for cycle with Jinja2 templating -->
+
 
       {% for movie in movies %}
       <div class="card" id="{{ movie['key']['kind'] }}-{{ movie['key']['name'] }}">

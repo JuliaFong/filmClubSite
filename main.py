@@ -10,8 +10,16 @@ datastore_client = datastore.Client()
 @app.route('/', methods = ['POST', 'GET'])
 def root():
     id_token = request.cookies.get("token")
+    if request.method == 'POST':
+        result = request.form
+        kind = 'Movie'
+        task_key = datastore_client.key(result["kind"],result["name"])
+        task['seen'] = True
+        datastore_client.put(task)
     claims = None
     error_message = None
+    query = datastore_client.query(kind="Movie").add_filter('seen', '=', False)
+    movies = list(query.fetch())
     
     if id_token:
         try:
@@ -26,8 +34,7 @@ def root():
         
     return render_template(
         'index.html',
-        user_data=claims, error_message=error_message, id_token=id_token)
-        
+        user_data=claims, error_message=error_message, id_token=id_token, movies=movies)
         
 @app.route('/login', methods= ['POST', 'GET'])
 def login():
@@ -53,6 +60,16 @@ def pastmovies():
     id_token = request.cookies.get("token")
     claims = None
     error_message = None
+    query = datastore_client.query(kind="Movie").add_filter('seen', '=', True)
+    movies = list(query.fetch())
+    
+    if request.method == 'POST':
+        result = request.form
+        kind = "Movie"
+        task_key = datastore_client.key(result["kind"],result["name"])
+        task = datastore_client.get(task_key)
+        task['seen'] = False
+        datastore_client.put(task)
     
     if id_token:
         try:
@@ -67,11 +84,23 @@ def pastmovies():
         
         return render_template(
         'pastmovies.html',
-            user_data=claims, error_message=error_message, id_token=id_token)  
+            user_data=claims, error_message=error_message, id_token=id_token, movies=movies)  
 
 @app.route('/suggestamovie', methods = ['POST', 'GET'])
 def suggestamovie():
     id_token = request.cookies.get("token")
+    if request.method == 'POST':
+        result = request.form
+        kind = 'Movie'
+        name = result['title'].replace(" ", "")
+        task_key = datastore_client.key(kind, name)
+        task = datastore.Entity(key=task_key)
+        task['title'] = result["title"]
+        task['genre'] = result["genre"]
+        task['plot'] = result["plot"]
+        task['suggested_by'] = result["suggested_by"]
+        task['seen'] = False
+        datastore_client.put(task)
     claims = None
     error_message = None
     
